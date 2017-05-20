@@ -1,1 +1,1 @@
-apt install rxvt-unicode-256color
+apt install rxvt-unicode-256color i3

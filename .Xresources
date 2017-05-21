@@ -37,3 +37,7 @@ URxvt.keysym.S-F9: \033[20;2~
 URxvt.keysym.S-F10: \033[21;2~
 URxvt.keysym.S-F11: \033[23;2~
 URxvt.keysym.S-F12: \033[24;2~
+
+! Enable fullscreen
+URxvt.perl-ext-common: fullscreen
+URxvt.keysym.F11: perl:fullscreen:switch

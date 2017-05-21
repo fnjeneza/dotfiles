@@ -1,6 +1,9 @@
 URxvt.font: xft:monospace:size=10
 URxvt.scrollBar: False
 
+! disable iso Ctrl+Shift shortcut that enters ISO14755 mode
+URxvt.iso14755: False
+
 !Theme Ten
 URxvt*background: rgb:1a/1a/1a
 URxvt*foreground: rgb:d6/d6/d6

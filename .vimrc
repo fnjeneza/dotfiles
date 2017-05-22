@@ -1,0 +1,255 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" add bottom line to vim
+Plugin 'vim-airline/vim-airline'
+
+" nerdtree
+Plugin 'scrooloose/nerdtree'
+
+" add different themes for airline
+"Plugin 'vim-airline/vim-airline-themes'
+
+" allow to change colors
+"Plugin 'flazz/vim-colorschemes'
+
+"YouCompleteMe
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'justmao945/vim-clang'
+
+" headerguard for c++
+Plugin 'drmikehenry/vim-headerguard'
+
+" Search for file
+Plugin 'kien/ctrlp.vim'
+
+" auto format
+"Plugin 'Chiel92/vim-autoformat'
+
+" switch between source files and header files
+"Plugin 'vim-scripts/a.vim'
+
+" cpp highlight
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+" syntax checker
+"Plugin 'scrooloose/syntastic'
+
+" delimiter
+"Plugin 'Raimondi/delimitMate'
+
+" Restores focus event when using vim inside tmux
+Plugin 'tmux-plugins/vim-tmux-focus-events'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"
+" add line numbers
+set number
+set relativenumber
+
+set wildmenu
+set path+=**
+
+" active airline on startup
+set laststatus=2
+
+set term=screen-256color
+" Set vim to support 256 colors
+set t_Co=256
+
+" set default colorscheme
+" More schemes at http://www.bytefluent.com/vivify/
+"colorscheme molokai "symfony colorful256 or dante
+
+" Enable vim tabline by airline
+let g:airline#extensions#tabline#enabled = 1
+
+" syntastic parameter
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+" end syntastic parameter
+
+set mouse=a
+set ignorecase	"Do case insensitive
+set incsearch	"incremental search
+set hlsearch
+set showmatch
+
+" tab indent
+set tabstop=4
+
+" soft tab
+set softtabstop=4
+set expandtab
+
+" indent
+set shiftwidth=4
+
+" smart indent
+" set smartindent
+
+" keep indentation on next line
+set autoindent
+
+set textwidth=80
+set colorcolumn=81
+
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+"·remove·trailing·whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+" set nowraping
+set nowrap
+set listchars=eol:¶,tab:→\ ,space:·
+set listchars+=precedes:<,extends:>
+set list
+
+"show command
+set showcmd
+
+" no backup
+set nobackup
+set nowritebackup
+
+" no swapfile
+set noswapfile
+
+"auto reload
+set autoread
+
+" highlight the current line
+set cursorline
+
+"copy line
+"nnoremap <C-c> yy
+"nnoremap <C-C> yy
+"inoremap <C-c> <ESC>yy<insert>
+"inoremap <C-C> <ESC>yy<insert>
+
+" cut one line
+nnoremap <C-x> dd
+nnoremap <C-X> dd
+inoremap <C-x> <ESC>dd<insert>
+inoremap <C-X> <ESC>dd<insert>
+
+" paste
+nnoremap <C-v> p
+nnoremap <C-V> p
+inoremap <C-v> <ESC>p<insert>
+inoremap <C-V> <ESC>p<insert>
+
+" move between .h and .cpp files
+"inoremap <F4> <ESC>:AT<CR>
+"nnoremap <F4> :AT<CR>
+
+" open new tab
+"inoremap <M-t> <ESC>:tabnew<CR>:NERDTreeToggle<CR>
+"nnoremap <M-t> :tabnew<CR>:NERDTreeToggle<CR>
+
+" next tab
+inoremap <Right> <ESC>:tabnext<CR>
+nnoremap <Right> :tabnext<CR>
+
+" previous tab
+inoremap <Left> <ESC>:tabprevious<CR>
+nnoremap <Left> :tabprevious<CR>
+
+" open/close NERDTree shortcut
+"inoremap <F2> <ESC>:NERDTreeToggle<CR>
+"nnoremap <F2> :NERDTreeToggle<CR>
+
+" new line below
+" builtin shortcut 'Alt+o'
+
+" append to the end of line 'Alt+A'
+
+" Press Ctrl-d to shift left, or Ctrl-t to shift right
+
+" bind <ctrl + c> to <ESC>
+inoremap <C-c> <ESC>
+
+" save
+nnoremap <C-s> :update<CR>
+inoremap <C-s> <ESC>:update<CR>
+
+"break a line
+"nnoremap <C-b> <insert><CR><ESC>
+"inoremap <C-b> <CR>
+
+" confirm quit
+nnoremap <C-q> :confirm quit<CR>
+inoremap <C-q> <ESC>:confirm quit<CR>
+
+"add comment
+nnoremap <C-_> :py3f ~/.vim/developer/comment.py<CR>
+vnoremap <C-_> :py3f ~/.vim/developer/comment.py<CR>
+
+" move
+" builtin shortcut 'Alt+hjkl'
+" 'Alt+b or w
+
+" CMakeLists.txt skeleton
+autocmd BufNewFile CMakeLists.txt 0read ~/.vim/developer/cpp/CMakeLists.txt
+
+" close preview window
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" default ycmçconfig
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+
+" do not confirm
+let g:ycm_confirm_extra_conf = 0
+
+" close nerdtree when main window is closed
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+

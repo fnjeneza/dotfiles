@@ -20,7 +20,7 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'vim-airline/vim-airline-themes'
 
 " allow to change colors
-"Plugin 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
 
 "YouCompleteMe
 "Plugin 'Valloric/YouCompleteMe'
@@ -45,7 +45,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 "Plugin 'scrooloose/syntastic'
 
 " delimiter
-"Plugin 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 
 " Restores focus event when using vim inside tmux
 Plugin 'tmux-plugins/vim-tmux-focus-events'
@@ -98,7 +98,7 @@ set t_Co=256
 
 " set default colorscheme
 " More schemes at http://www.bytefluent.com/vivify/
-"colorscheme molokai "symfony colorful256 or dante
+colorscheme molokai "symfony colorful256 or dante
 
 " Enable vim tabline by airline
 let g:airline#extensions#tabline#enabled = 1

@@ -45,7 +45,11 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 "Plugin 'scrooloose/syntastic'
 
 " delimiter
-Plugin 'Raimondi/delimitMate'
+"Plugin 'Raimondi/delimitMate'
+
+" autoclose
+Plugin 'Townk/vim-autoclose'
+
 
 " Restores focus event when using vim inside tmux
 Plugin 'tmux-plugins/vim-tmux-focus-events'

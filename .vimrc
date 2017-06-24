@@ -192,6 +192,18 @@ nnoremap <C-V> p
 inoremap <C-v> <ESC>p<insert>
 inoremap <C-V> <ESC>p<insert>
 
+nnoremap <M-l> l
+inoremap <M-l> <ESC>l<insert>
+
+nnoremap <M-h> h
+inoremap <M-h> <ESC>h<insert>
+
+nnoremap <M-h> h
+inoremap <M-h> <ESC>h<insert>
+
+nnoremap <M-k> k
+inoremap <M-k> <ESC>h<insert>
+
 " move between .h and .cpp files
 "inoremap <F4> <ESC>:AT<CR>
 "nnoremap <F4> :AT<CR>
@@ -256,4 +268,3 @@ let g:ycm_confirm_extra_conf = 0
 
 " close nerdtree when main window is closed
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-

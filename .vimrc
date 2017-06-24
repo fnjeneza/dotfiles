@@ -221,8 +221,8 @@ inoremap <Left> <ESC>:tabprevious<CR>
 nnoremap <Left> :tabprevious<CR>
 
 " open/close NERDTree shortcut
-"inoremap <F2> <ESC>:NERDTreeToggle<CR>
-"nnoremap <F2> :NERDTreeToggle<CR>
+inoremap <F9> <ESC>:NERDTreeToggle<CR>
+nnoremap <F9> :NERDTreeToggle<CR>
 
 " new line below
 " builtin shortcut 'Alt+o'

@@ -1,0 +1,3 @@
+[submodule "stterm/st"]
+	path = stterm/st
+	url = http://git.suckless.org/st

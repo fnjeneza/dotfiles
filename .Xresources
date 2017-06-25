@@ -1,5 +1,8 @@
+URxvt.buffered: true
+URxvt.cursorBlink: true
 URxvt.font: xft:monospace:size=10
 URxvt.scrollBar: False
+URxvt.mouseWheelScrollPage: true
 
 ! disable iso Ctrl+Shift shortcut that enters ISO14755 mode
 URxvt.iso14755: False

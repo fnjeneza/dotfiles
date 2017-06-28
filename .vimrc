@@ -50,9 +50,11 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 " autoclose
 Plugin 'Townk/vim-autoclose'
 
-
 " Restores focus event when using vim inside tmux
 Plugin 'tmux-plugins/vim-tmux-focus-events'
+
+"tmux conf colorization
+Plugin 'tmux-plugins/vim-tmux'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.

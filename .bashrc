@@ -118,3 +118,5 @@ fi
 
 stty -ixon
 export PATH=$HOME/.local/bin:$PATH
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

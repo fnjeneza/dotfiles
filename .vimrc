@@ -3,6 +3,7 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -55,6 +56,9 @@ Plugin 'tmux-plugins/vim-tmux-focus-events'
 
 "tmux conf colorization
 Plugin 'tmux-plugins/vim-tmux'
+
+" fzf
+Plugin 'junegunn/fzf'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -258,6 +262,7 @@ vnoremap <C-_> :py3f ~/.vim/developer/comment.py<CR>
 
 " CMakeLists.txt skeleton
 autocmd BufNewFile CMakeLists.txt 0read ~/.vim/developer/cpp/CMakeLists.txt
+
 
 " close preview window
 let g:ycm_autoclose_preview_window_after_completion = 1

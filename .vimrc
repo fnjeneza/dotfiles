@@ -130,6 +130,7 @@ set incsearch	"incremental search
 set hlsearch
 set showmatch
 
+set bs=indent,eol,start   " allow backspacing over everything in insert mode)"
 " tab indent
 set tabstop=4
 

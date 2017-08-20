@@ -277,3 +277,6 @@ let g:ycm_confirm_extra_conf = 0
 
 " close nerdtree when main window is closed
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" grep search using fzf
+command! -bang -nargs=* Grep call fzf#vim#grep('grep --color=always -rnI '.shellescape(<q-args>), 0, <bang>0)

@@ -59,6 +59,7 @@ Plugin 'tmux-plugins/vim-tmux'
 
 " fzf
 Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.

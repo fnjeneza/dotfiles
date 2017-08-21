@@ -60,6 +60,7 @@ Plugin 'tmux-plugins/vim-tmux'
 " fzf
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'tpope/vim-commentary'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -158,7 +159,14 @@ if has("autocmd")
 endif
 
 "·remove·trailing·whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+function! s:remove_trail_whitespace()
+    let pos = getpos('.')
+    %s/\s\+$//e
+    call setpos('.', pos)
+endfunction
+
+"autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * call s:remove_trail_whitespace()
 
 " set nowraping
 set nowrap

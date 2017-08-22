@@ -263,6 +263,9 @@ inoremap <C-s> <ESC>:update<CR>
 nnoremap <C-q> :confirm quit<CR>
 inoremap <C-q> <ESC>:confirm quit<CR>
 
+" comment style for cpp
+autocmd Filetype cpp setlocal commentstring=//\ %s
+
 "add comment
 nnoremap <C-_> :Commentary<CR>
 inoremap <C-_> <ESC>:Commentary<CR><insert>

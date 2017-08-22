@@ -60,6 +60,7 @@ Plugin 'tmux-plugins/vim-tmux'
 " fzf
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+" comments
 Plugin 'tpope/vim-commentary'
 
 " The following are examples of different formats supported.
@@ -263,8 +264,9 @@ nnoremap <C-q> :confirm quit<CR>
 inoremap <C-q> <ESC>:confirm quit<CR>
 
 "add comment
-nnoremap <C-_> :py3f ~/.vim/developer/comment.py<CR>
-vnoremap <C-_> :py3f ~/.vim/developer/comment.py<CR>
+nnoremap <C-_> :Commentary<CR>
+inoremap <C-_> <ESC>:Commentary<CR><insert>
+vnoremap <C-_> :Commentary<CR>gv
 
 " move
 " builtin shortcut 'Alt+hjkl'

@@ -117,6 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 stty -ixon
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.local/llvm/bin/:$PATH
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+. ~/.local/ninja/bash-completion

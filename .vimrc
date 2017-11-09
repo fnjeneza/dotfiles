@@ -295,10 +295,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 command! -bang -nargs=* Grep call fzf#vim#grep('grep --color=always -rnI '.shellescape(<q-args>), 0, <bang>0)
 
 " clang format
-map <C-K> :py3f /tmp/cpp-lsp/clang+llvm/share/clang/clang-format.py<cr>
-imap <C-K> <c-o>:py3f /tmp/cpp-lsp/clang+llvm/share/clang/clang-format.py<cr>
+map <C-K> :py3f ~/.local/llvm/share/clang/clang-format.py<cr>
+imap <C-K> <c-o>:py3f ~/.local/llvm/share/clang/clang-format.py<cr>
 function! Formatonsave()
   let l:formatdiff = 1
-  py3f  /tmp/cpp-lsp/clang+llvm/share/clang/clang-format.py
+  py3f  ~/.local/llvm/share/clang/clang-format.py
 endfunction
 autocmd BufWritePre *.h,*.hh,*.hpp,*.hxx,*.c,*.cc,*.cpp,*cxx call Formatonsave()

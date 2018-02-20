@@ -31,7 +31,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'drmikehenry/vim-headerguard'
 
 " Search for file
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
 
 " auto format
 "Plugin 'Chiel92/vim-autoformat'
@@ -270,6 +270,9 @@ autocmd Filetype cpp setlocal commentstring=//\ %s
 nnoremap <C-_> :Commentary<CR>
 inoremap <C-_> <ESC>:Commentary<CR><insert>
 vnoremap <C-_> :Commentary<CR>gv
+
+nnoremap <C-p> :FZF<CR>
+nnoremap <C-l> :Buffers<CR>
 
 " move
 " builtin shortcut 'Alt+hjkl'

@@ -265,6 +265,9 @@ inoremap <C-q> <ESC>:confirm quit<CR>
 
 " comment style for cpp
 autocmd Filetype cpp setlocal commentstring=//\ %s
+" comment style for CMakeLists
+autocmd Filetype cmake setlocal commentstring=#\ %s
+autocmd BufNewFile CMakeLists.txt setlocal commentstring=#\ %s
 
 "add comment
 nnoremap <C-_> :Commentary<CR>

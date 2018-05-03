@@ -62,6 +62,10 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 " comments
 Plugin 'tpope/vim-commentary'
+" engine's snippets.
+Plugin 'SirVer/ultisnips'
+" Snippets
+Plugin 'honza/vim-snippets'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -308,3 +312,8 @@ function! Formatonsave()
   py3f  ~/.local/llvm/share/clang/clang-format.py
 endfunction
 autocmd BufWritePre *.h,*.hh,*.hpp,*.hxx,*.c,*.cc,*.cpp,*cxx call Formatonsave()
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"

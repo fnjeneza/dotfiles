@@ -94,9 +94,12 @@ bindsym $mod+q focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $workspace1 "1: Terminal"
+set $workspace2 "2: Firefox"
+
 # switch to workspace
-bindsym $mod+ampersand workspace 1
-bindsym $mod+eacute workspace 2
+bindsym $mod+ampersand workspace $workspace1
+bindsym $mod+eacute workspace $workspace2
 bindsym $mod+quotedbl workspace 3
 bindsym $mod+apostrophe workspace 4
 bindsym $mod+parenleft workspace 5
@@ -107,8 +110,8 @@ bindsym $mod+ccedilla workspace 9
 bindsym $mod+agrave workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+eacute move container to workspace 2
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+eacute move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
@@ -168,3 +171,6 @@ bindsym Mod1+Ctrl+l exec i3lock
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+exec firefox
+assign ["firefox"] $workspace2

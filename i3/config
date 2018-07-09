@@ -31,7 +31,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym Mod1+Ctrl+t exec st -e tmux
+set $terminal st -e tmux
+bindsym Mod1+Ctrl+t exec $terminal
 
 # kill focused window
 bindsym $mod+Shift+A kill
@@ -172,5 +173,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
+exec $terminal
 exec firefox
-assign ["firefox"] $workspace2
+assign [class="Firefox"] $workspace2

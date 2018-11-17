@@ -66,6 +66,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'SirVer/ultisnips'
 " Snippets
 Plugin 'honza/vim-snippets'
+" editorconfig
+Plugin 'editorconfig/editorconfig-vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.

@@ -208,10 +208,10 @@ inoremap <C-x> <ESC>dd<insert>
 inoremap <C-X> <ESC>dd<insert>
 
 " paste
-nnoremap <C-v> p
-nnoremap <C-V> p
-inoremap <C-v> <ESC>p<insert>
-inoremap <C-V> <ESC>p<insert>
+" nnoremap <C-v> p
+" nnoremap <C-V> p
+" inoremap <C-v> <ESC>p<insert>
+" inoremap <C-V> <ESC>p<insert>
 
 nnoremap <M-l> l
 inoremap <M-l> <ESC>l<insert>
@@ -285,10 +285,6 @@ nnoremap <C-l> :Buffers<CR>
 " builtin shortcut 'Alt+hjkl'
 " 'Alt+b or w
 
-" CMakeLists.txt skeleton
-autocmd BufNewFile CMakeLists.txt 0read ~/.vim/developer/cpp/CMakeLists.txt
-
-
 " close preview window
 let g:ycm_autoclose_preview_window_after_completion = 1
 
@@ -309,7 +305,7 @@ map <C-K> :py3f ~/.local/llvm/share/clang/clang-format.py<cr>
 imap <C-K> <c-o>:py3f ~/.local/llvm/share/clang/clang-format.py<cr>
 function! Formatonsave()
   let l:formatdiff = 1
-  py3f  ~/.local/llvm/share/clang/clang-format.py
+  " py3f  ~/.local/llvm/share/clang/clang-format.py
 endfunction
 autocmd BufWritePre *.h,*.hh,*.hpp,*.hxx,*.c,*.cc,*.cpp,*cxx call Formatonsave()
 

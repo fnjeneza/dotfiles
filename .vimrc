@@ -165,6 +165,18 @@ if has("autocmd")
    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+" Display CRLF as ^M.
+" CRLF is for windows
+if has("autocmd")
+    au BufReadPost * :edit ++fileformat=unix
+endif
+
+" function! Remove_crlf()
+"     :setlocal fileformat=unix
+"     :write
+"     :e
+" endfunction
+
 "·remove·trailing·whitespace
 function! s:remove_trail_whitespace()
     if &filetype == 'markdown'

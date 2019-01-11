@@ -167,6 +167,9 @@ endif
 
 "·remove·trailing·whitespace
 function! s:remove_trail_whitespace()
+    if &filetype == 'markdown'
+        return
+    endif
     let pos = getpos('.')
     %s/\s\+$//e
     call setpos('.', pos)

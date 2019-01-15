@@ -171,11 +171,16 @@ if has("autocmd")
     au BufReadPost * :edit ++fileformat=unix
 endif
 
-" function! Remove_crlf()
-"     :setlocal fileformat=unix
-"     :write
-"     :e
-" endfunction
+function! s:remove_crlf()
+    let pos = getpos('.')
+    %s///e
+    call setpos('.', pos)
+    " :setlocal fileformat=unix
+    " :write
+    " :e
+endfunction
+
+command -nargs=0 RemoveCrlf :call s:remove_crlf()
 
 "·remove·trailing·whitespace
 function! s:remove_trail_whitespace()

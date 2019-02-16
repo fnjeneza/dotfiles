@@ -116,7 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-stty -ixon
+alias vim='stty -ixon; `which vim`'
 export PATH=$HOME/.local/bin:$HOME/.local/llvm/bin/:$PATH
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

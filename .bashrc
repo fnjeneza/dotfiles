@@ -119,6 +119,14 @@ fi
 alias vim='stty -ixon; `which vim`'
 export PATH=$HOME/.local/bin:$HOME/.local/llvm/bin/:$PATH
 
+# Install fzf if not exist
+if ! [ -d $HOME/.fzf ]; then
+    git clone https://github.com/junegunn/fzf.git $HOME/.fzf
+    cd .fzf && ./install --all && cd -
+fi
+
+[ -x $HOME/.fzf/bin/fzf ] && export PATH=$PATH:$HOME/fzf/bin
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # . ~/.local/ninja/bash-completion
 export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || find . -path "*/\.*" -prune -o -type f -print -o -type l -print | sed s/^..//) 2> /dev/null'

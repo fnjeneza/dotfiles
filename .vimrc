@@ -138,6 +138,9 @@ set ignorecase	"Do case insensitive
 set incsearch	"incremental search
 set hlsearch
 set showmatch
+" re-center the search
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 set ttyfast
 

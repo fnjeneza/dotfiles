@@ -70,6 +70,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'editorconfig/editorconfig-vim'
 " typescript
 Plugin 'leafgarland/typescript-vim'
+" LSP
+Plugin 'autozimu/LanguageClient-neovim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -117,9 +119,11 @@ set term=screen-256color
 " Set vim to support 256 colors
 set t_Co=256
 
-" set default colorscheme
-" More schemes at http://www.bytefluent.com/vivify/
-colorscheme molokai "symfony colorful256 or dante
+if filereadable(expand('~/.vim/bundle/vim-colorschemes/colors/molokai.vim'))
+    " set default colorscheme
+    " More schemes at http://www.bytefluent.com/vivify/
+    colorscheme molokai "symfony colorful256 or dante
+endif
 
 " Enable vim tabline by airline
 let g:airline#extensions#tabline#enabled = 1
@@ -231,10 +235,10 @@ set cursorline
 "inoremap <C-C> <ESC>yy<insert>
 
 " cut one line
-nnoremap <C-x> dd
-nnoremap <C-X> dd
-inoremap <C-x> <ESC>dd<insert>
-inoremap <C-X> <ESC>dd<insert>
+" nnoremap <C-x> dd
+" nnoremap <C-X> dd
+" inoremap <C-x> <ESC>dd<insert>
+" inoremap <C-X> <ESC>dd<insert>
 
 " paste
 " nnoremap <C-v> p
@@ -344,3 +348,10 @@ autocmd BufWritePre *.h,*.hh,*.hpp,*.hxx,*.c,*.cc,*.cpp,*cxx call Formatonsave()
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'python': ['/home/njeneza/.local/bin/pyls'],
+    \ }
+

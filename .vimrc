@@ -332,6 +332,12 @@ let g:ycm_confirm_extra_conf = 0
 " close nerdtree when main window is closed
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Install fzf if not installed
+if empty(glob('~/.fzf'))
+    silent !git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    silent !~/.fzf/install --no-key-bindings --completion --update-rc
+endif
+
 " grep search using fzf
 command! -bang -nargs=* Grep call fzf#vim#grep('grep --color=always -rnI '.shellescape(<q-args>), 0, <bang>0)
 

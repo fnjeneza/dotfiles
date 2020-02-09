@@ -20,8 +20,8 @@ Plugin 'scrooloose/nerdtree'
 " add different themes for airline
 "Plugin 'vim-airline/vim-airline-themes'
 
-" allow to change colors
-Plugin 'flazz/vim-colorschemes'
+" add molokai colorscheme
+Plugin 'tomasr/molokai'
 
 "YouCompleteMe
 "Plugin 'Valloric/YouCompleteMe'

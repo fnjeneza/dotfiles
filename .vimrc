@@ -5,106 +5,25 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.fzf
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" add bottom line to vim
-Plugin 'vim-airline/vim-airline'
-
-" nerdtree
-Plugin 'scrooloose/nerdtree'
-
-" add different themes for airline
-"Plugin 'vim-airline/vim-airline-themes'
-
 " add molokai colorscheme
 Plugin 'tomasr/molokai'
-
-"YouCompleteMe
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'justmao945/vim-clang'
-
-" headerguard for c++
-Plugin 'drmikehenry/vim-headerguard'
-
-" Search for file
-" Plugin 'kien/ctrlp.vim'
-
-" auto format
-"Plugin 'Chiel92/vim-autoformat'
-
-" switch between source files and header files
-"Plugin 'vim-scripts/a.vim'
-
-" cpp highlight
-Plugin 'octol/vim-cpp-enhanced-highlight'
-
-" syntax checker
-"Plugin 'scrooloose/syntastic'
-
-" delimiter
-"Plugin 'Raimondi/delimitMate'
-
-" autoclose
-Plugin 'Townk/vim-autoclose'
-
-" Restores focus event when using vim inside tmux
-Plugin 'tmux-plugins/vim-tmux-focus-events'
-
-"tmux conf colorization
-Plugin 'tmux-plugins/vim-tmux'
-
 " fzf
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 " comments
 Plugin 'tpope/vim-commentary'
-" engine's snippets.
-Plugin 'SirVer/ultisnips'
-" Snippets
-Plugin 'honza/vim-snippets'
 " editorconfig
 Plugin 'editorconfig/editorconfig-vim'
-" typescript
-Plugin 'leafgarland/typescript-vim'
-" LSP
-Plugin 'autozimu/LanguageClient-neovim'
+" cpp highlight
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
+
 " add line numbers
 set number
 set relativenumber
@@ -119,62 +38,41 @@ set term=screen-256color
 " Set vim to support 256 colors
 set t_Co=256
 
-if filereadable(expand('~/.vim/bundle/vim-colorschemes/colors/molokai.vim'))
+syntax on
+
+if filereadable(expand('~/.vim/bundle/molokai/colors/molokai.vim'))
     " set default colorscheme
     " More schemes at http://www.bytefluent.com/vivify/
     colorscheme molokai "symfony colorful256 or dante
 endif
 
-" Enable vim tabline by airline
-let g:airline#extensions#tabline#enabled = 1
-
-" syntastic parameter
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-" end syntastic parameter
+set textwidth=80
+set colorcolumn=81
 
 set mouse=a
 set ignorecase	"Do case insensitive
 set incsearch	"incremental search
 set hlsearch
 set showmatch
-" re-center the search
-nnoremap n nzzzv
-nnoremap N Nzzzv
 
 set ttyfast
 
 set bs=indent,eol,start   " allow backspacing over everything in insert mode)"
 " tab indent
-set tabstop=4
+set tabstop=2
 
 " soft tab
-set softtabstop=4
+set softtabstop=2
 set expandtab
 
 " indent
-set shiftwidth=4
+set shiftwidth=2
 
 " smart indent
 " set smartindent
 
 " keep indentation on next line
 set autoindent
-
-set textwidth=80
-set colorcolumn=81
-
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
-if has("autocmd")
-   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
 
 " Display CRLF as ^M.
 " CRLF is for windows
@@ -215,122 +113,21 @@ set list
 "show command
 set showcmd
 
-" no backup
-set nobackup
-set nowritebackup
-
-" no swapfile
-set noswapfile
-
 "auto reload
 set autoread
 
 " highlight the current line
 set cursorline
 
-"copy line
-"nnoremap <C-c> yy
-"nnoremap <C-C> yy
-"inoremap <C-c> <ESC>yy<insert>
-"inoremap <C-C> <ESC>yy<insert>
-
-" cut one line
-" nnoremap <C-x> dd
-" nnoremap <C-X> dd
-" inoremap <C-x> <ESC>dd<insert>
-" inoremap <C-X> <ESC>dd<insert>
-
-" paste
-" nnoremap <C-v> p
-" nnoremap <C-V> p
-" inoremap <C-v> <ESC>p<insert>
-" inoremap <C-V> <ESC>p<insert>
-
-nnoremap <M-l> l
-inoremap <M-l> <ESC>l<insert>
-
-nnoremap <M-h> h
-inoremap <M-h> <ESC>h<insert>
-
-nnoremap <M-h> h
-inoremap <M-h> <ESC>h<insert>
-
-nnoremap <M-k> k
-inoremap <M-k> <ESC>h<insert>
-
-" move between .h and .cpp files
-"inoremap <F4> <ESC>:AT<CR>
-"nnoremap <F4> :AT<CR>
-
-" open new tab
-"inoremap <M-t> <ESC>:tabnew<CR>:NERDTreeToggle<CR>
-"nnoremap <M-t> :tabnew<CR>:NERDTreeToggle<CR>
-
-" next tab
-inoremap <Right> <ESC>:tabnext<CR>
-nnoremap <Right> :tabnext<CR>
-
-" previous tab
-inoremap <Left> <ESC>:tabprevious<CR>
-nnoremap <Left> :tabprevious<CR>
-
-" open/close NERDTree shortcut
-inoremap <F9> <ESC>:NERDTreeToggle<CR>
-nnoremap <F9> :NERDTreeToggle<CR>
-
-" new line below
-" builtin shortcut 'Alt+o'
-
-" append to the end of line 'Alt+A'
-
-" Press Ctrl-d to shift left, or Ctrl-t to shift right
-
-" bind <ctrl + c> to <ESC>
-inoremap <C-c> <ESC>
-
 " save
 nnoremap <C-s> :update<CR>
 inoremap <C-s> <ESC>:update<CR>
 
-"break a line
-"nnoremap <C-b> <insert><CR><ESC>
-"inoremap <C-b> <CR>
-
-" confirm quit
-nnoremap <C-q> :confirm quit<CR>
-inoremap <C-q> <ESC>:confirm quit<CR>
-
 " comment style for cpp
 autocmd Filetype cpp setlocal commentstring=//\ %s
-" comment style for typescritp
-autocmd Filetype typescript setlocal commentstring=//\ %s
 " comment style for CMakeLists
 autocmd Filetype cmake setlocal commentstring=#\ %s
 autocmd BufNewFile CMakeLists.txt setlocal commentstring=#\ %s
-
-"add comment
-nnoremap <C-_> :Commentary<CR>
-inoremap <C-_> <ESC>:Commentary<CR><insert>
-vnoremap <C-_> :Commentary<CR>gv
-
-nnoremap <C-p> :FZF<CR>
-nnoremap <C-l> :Buffers<CR>
-
-" move
-" builtin shortcut 'Alt+hjkl'
-" 'Alt+b or w
-
-" close preview window
-let g:ycm_autoclose_preview_window_after_completion = 1
-
-" default ycmçconfig
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
-
-" do not confirm
-let g:ycm_confirm_extra_conf = 0
-
-" close nerdtree when main window is closed
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Install fzf if not installed
 if empty(glob('~/.fzf'))
@@ -341,30 +138,10 @@ endif
 " grep search using fzf
 command! -bang -nargs=* Grep call fzf#vim#grep('grep --color=always -rnI '.shellescape(<q-args>), 0, <bang>0)
 
-" clang format
-map <C-K> :py3f /usr/share/clang/clang-format-7/clang-format.py<cr>
-imap <C-K> <c-o>:py3f /usr/share/clang/clang-format-7/clang-format.py<cr>
-function! Formatonsave()
-  let l:formatdiff = 1
-  py3f /usr/share/clang/clang-format-7/clang-format.py
-endfunction
-autocmd BufWritePre *.h,*.hh,*.hpp,*.hxx,*.c,*.cc,*.cpp,*cxx call Formatonsave()
+"add comment
+nnoremap <C-_> :Commentary<CR>
+inoremap <C-_> <ESC>:Commentary<CR><insert>
+vnoremap <C-_> :Commentary<CR>gv
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-if !empty(glob('~/.vim/bundle/LanguageClient-neovim'))
-    if empty(glob('~/.vim/bundle/LanguageClient-neovim/bin/languageclient'))
-        silent !echo "cd ~/.vim/bundle/LanguageClient-neovim/ && bash install.sh" > /tmp/lsp.sh
-        silent !bash /tmp/lsp.sh
-    endif
-endif
-
-let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-    \ 'python': ['/home/njeneza/.local/bin/pyls'],
-    \ }
-
+nnoremap <C-p> :FZF<CR>
+nnoremap <C-l> :Buffers<CR>

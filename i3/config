@@ -29,6 +29,9 @@ font pango:monospace 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Disable titlebar
+new_window 1pixel
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 set $terminal st -e tmux

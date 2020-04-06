@@ -121,7 +121,7 @@ export PATH=$HOME/.local/bin:$HOME/.local/llvm/bin/:$PATH
 
 # Install fzf if not exist
 if ! [ -d $HOME/.fzf ]; then
-    git clone https://github.com/junegunn/fzf.git $HOME/.fzf
+    git clone --depth=1 https://github.com/junegunn/fzf.git $HOME/.fzf
     cd .fzf && ./install --all && cd -
 fi
 

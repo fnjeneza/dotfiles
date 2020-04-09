@@ -74,6 +74,12 @@ set shiftwidth=2
 " keep indentation on next line
 set autoindent
 
+if empty(glob('~/.vim/undodir'))
+    silent !mkdir ~/.vim/undodir
+endif
+set undodir=~/.vim/undodir
+set undofile
+
 " Display CRLF as ^M.
 " CRLF is for windows
 if has("autocmd")

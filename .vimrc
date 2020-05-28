@@ -125,6 +125,8 @@ set autoread
 " highlight the current line
 set cursorline
 
+set noswapfile
+
 " save
 nnoremap <C-s> :update<CR>
 inoremap <C-s> <ESC>:update<CR>

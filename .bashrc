@@ -99,6 +99,14 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias disable_screen_saver='xset s off; xset -dpms; xset s noblank;'
 alias gti='git'
 
+change_keyboard_layout() {
+    if [ 1 -eq `setxkbmap -query | grep -e layout | grep -c fr` ]; then
+        setxkbmap -layout us
+    else
+        setxkbmap -layout fr -variant latin9
+    fi
+}
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.

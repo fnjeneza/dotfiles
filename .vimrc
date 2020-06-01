@@ -126,6 +126,7 @@ set autoread
 set cursorline
 
 set noswapfile
+set shortmess-=S
 
 " save
 nnoremap <C-s> :update<CR>

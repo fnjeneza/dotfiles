@@ -20,6 +20,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'editorconfig/editorconfig-vim'
 " cpp highlight
 Plugin 'octol/vim-cpp-enhanced-highlight'
+" Typescript highlight
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

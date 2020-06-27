@@ -4,26 +4,31 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.fzf
-call vundle#begin()
+call plug#begin('~/.vim/plug')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'VundleVim/Vundle.vim'
 
 " add molokai colorscheme
-Plugin 'tomasr/molokai'
+Plug 'tomasr/molokai'
 " fzf
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 " comments
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 " editorconfig
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 " cpp highlight
-Plugin 'octol/vim-cpp-enhanced-highlight'
+Plug 'octol/vim-cpp-enhanced-highlight'
 " Typescript highlight
-Plugin 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-tsserver'
+Plug 'neoclide/coc-eslint'
+Plug 'neoclide/coc-prettier'
 
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 
 " add line numbers
@@ -140,6 +145,12 @@ autocmd Filetype cpp setlocal commentstring=//\ %s
 autocmd Filetype cmake setlocal commentstring=#\ %s
 autocmd BufNewFile CMakeLists.txt setlocal commentstring=#\ %s
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Install fzf if not installed
 if empty(glob('~/.fzf'))
     silent !git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -156,3 +167,15 @@ vnoremap <C-_> :Commentary<CR>gv
 
 nnoremap <C-p> :FZF<CR>
 nnoremap <C-l> :Buffers<CR>
+
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+nmap <silent> gd <Plug>(coc-definition)

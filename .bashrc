@@ -128,7 +128,7 @@ if ! shopt -oq posix; then
 fi
 
 alias vim='stty -ixon; `which vim`'
-export PATH=/opt/bin:$HOME/.local/bin:$PATH
+export PATH=/opt/bin:/opt/shared/bin:$HOME/.local/bin:$PATH
 
 # Install fzf if not exist
 if ! [ -d $HOME/.fzf ]; then

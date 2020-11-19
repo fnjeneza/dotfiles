@@ -142,3 +142,6 @@ fi
 # . ~/.local/ninja/bash-completion
 export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || find . -path "*/\.*" -prune -o -type f -print -o -type l -print | sed s/^..//) 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# load kubectl completion
+[ -x `which kubectl` ] && source <(kubectl completion bash)

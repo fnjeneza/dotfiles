@@ -71,6 +71,7 @@ set tabstop=2
 " soft tab
 set softtabstop=2
 set expandtab
+autocmd FileType make setlocal noexpandtab
 
 " indent
 set shiftwidth=2

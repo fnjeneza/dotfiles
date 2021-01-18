@@ -47,7 +47,7 @@ set t_Co=256
 
 syntax on
 
-if filereadable(expand('~/.vim/bundle/molokai/colors/molokai.vim'))
+if filereadable(expand('~/.vim/plug/molokai/colors/molokai.vim'))
     " set default colorscheme
     " More schemes at http://www.bytefluent.com/vivify/
     colorscheme molokai "symfony colorful256 or dante

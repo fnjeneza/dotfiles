@@ -145,3 +145,4 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # load kubectl completion
 [ -x `which kubectl` ] && source <(kubectl completion bash)
+[ -x `which helm` ] && source <(helm completion bash)

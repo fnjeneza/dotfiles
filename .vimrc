@@ -159,7 +159,7 @@ if empty(glob('~/.fzf'))
 endif
 
 " grep search using fzf
-command! -bang -nargs=* Grep call fzf#vim#grep('grep --color=always -rnI '.shellescape(<q-args>), 0, <bang>0)
+command! -bang -nargs=* Grep call fzf#vim#grep('git grep --color=always -rnI '.shellescape(<q-args>), 0, <bang>0)
 
 "add comment
 nnoremap <C-_> :Commentary<CR>

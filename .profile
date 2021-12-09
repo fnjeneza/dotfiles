@@ -26,5 +26,12 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# set VIMRUNTIME
+function vim_runtime() {
+    VIMFOLDER=`find $HOME/.local/share/vim -name defaults.vim`
+    [ -f $VIMFOLDER ] && export VIMRUNTIME=$(dirname $VIMFOLDER)
+}
+vim_runtime
+
 # start graphical server if i3 not already running
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 > /dev/null && exec startx

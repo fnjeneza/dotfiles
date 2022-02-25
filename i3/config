@@ -190,4 +190,4 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 exec $terminal
 assign [class="st-256color"] $workspace1
 exec firefox
-assign [class="Firefox"] $workspace2
+assign [class="firefox-aurora"] $workspace2

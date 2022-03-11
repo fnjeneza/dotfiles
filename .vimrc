@@ -145,6 +145,7 @@ autocmd Filetype cpp setlocal commentstring=//\ %s
 " comment style for CMakeLists
 autocmd Filetype cmake setlocal commentstring=#\ %s
 autocmd BufNewFile CMakeLists.txt setlocal commentstring=#\ %s
+autocmd BufRead,BufNewFile *.Containerfile setfiletype dockerfile
 
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
